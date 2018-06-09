@@ -1,0 +1,71 @@
+#waiceng{
+	width: 500px;
+	height: 375px;
+	position: absolute;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+#photos img{
+	width: 500px;
+	height: 375px;
+	float: left;
+}
+
+#photos{
+	position: absolute;
+	width: calc(500px * 6);
+}
+
+.play{
+	animation: leftMove 10s ease-out infinite; /*无限循环这个过程*/
+}
+
+@keyframes leftMove{
+	0%{margin-left: 0px;}
+	20%{margin-left: -500px;}
+	40%{margin-left: -1000px;}
+	60%{margin-left: -1500px;}
+	80%{margin-left: -2000px;}
+	100%{margin-left: -2500px;}
+}
+
+.num{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	right: 5px;
+	top: 345px;
+	background-color: green;
+	cursor: pointer;
+	z-index: 1;
+	text-align: center;
+	color: white;
+	opacity: 0.8;
+}
+
+.num:hover,#photos:hover{
+	animation-play-state: paused;
+}
+
+.num:nth-child(4){margin-right: 30px;}
+.num:nth-child(3){margin-right: 60px;}
+.num:nth-child(2){margin-right: 90px;}
+.num:nth-child(1){margin-right: 120px;}
+
+.num:hover{
+	background-color: blue;
+}
+
+/*将数字与图片信息进行绑定*/
+#a1:hover ~ #photos{animation: move1 .5s ease-out forwards;}
+#a2:hover ~ #photos{animation: move2 .5s ease-out forwards;}
+#a3:hover ~ #photos{animation: move3 .5s ease-out forwards;}
+#a4:hover ~ #photos{animation: move4 .5s ease-out forwards;}
+#a5:hover ~ #photos{animation: move5 .5s ease-out forwards;}
+
+@keyframes move1{100%{margin-left: 0px;}}
+@keyframes move2{100%{margin-left: -500px;}}
+@keyframes move3{100%{margin-left: -1000px;}}
+@keyframes move4{100%{margin-left: -1500px;}}
+@keyframes move5{100%{margin-left: -2000px;}}
